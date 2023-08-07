@@ -7,22 +7,22 @@ import java.util.Set;
 import com.vamshi.arrayprogramms.Removingduplicatesandchecking_length;
 
 class Solution {
-    	public static int[] rotate(int[] nums, int k) {
-            int [] ans=new int[nums.length];
-            int index=0;
-            for(int i=k;i<nums.length;i++){
-            	ans[index]=nums[i];
-            	index++;
-            	                
-            }for(int i=0;i<k;i++) {
-            ans[index]=nums[i];
-            index++;
-            }
-            return ans;
-           }
-    public static void main(String[] args) {
-		int[] myarray= {1,2,2,3,3};
-		int[] ans=rotate(myarray, 3);
-	System.out.println(  Arrays.toString( ans));
-    }
+	  public String gcdOfStrings(String str1, String str2) {
+	      String ans=null;  
+		  if(str1.length()>str2.length()&&str1.contains(str2)) {
+	        	Set<String>myset=new HashSet<>();
+	        	for(int i=0;i<str1.length();i++) {
+	        		for (int j = i + str2.length(); j <= str1.length(); j++) {
+	                    String substring = str1.substring(i, j);
+	                    if (substring.contains(str2)) {
+	                        myset.add(substring);
+	                    }
+	        		}
+	        		}
+	         ans=myset.toString();
+	        	}
+	    
+	  
+	return ans;
+	}
 }
